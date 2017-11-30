@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Menu
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-lines>
+    <ion-list-header>Personalizar</ion-list-header>
+    <button ion-item *ngFor="let page of perPages" (click)="openPage(page)">
+      <ion-icon name="{{page.icon}}" item-start></ion-icon>
+      {{page.title}}
+    </button>
+
+    <ion-list-header>Configurações</ion-list-header>
+    <button ion-item *ngFor="let page of configPages" (click)="openPage(page)">
+      <ion-icon name="{{page.icon}}" item-start></ion-icon>
+      {{page.title}}
+    </button>
+
+  </ion-list>
+</ion-content>

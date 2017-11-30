@@ -1,0 +1,15 @@
+.ios, .md {
+  page-menu {
+    .content {
+      background: #fcfcfc;
+    }
+  
+    .item {
+      background: transparent;
+    }
+  
+    [ion-item] {
+      background: transparent;
+    }
+  }
+}

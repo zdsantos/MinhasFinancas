@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Categorias</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-searchbar
+    [(ngModel)]="filter"
+    [showCancelButton]="true"
+    [autocorrect]="on"
+    [placeholder]="pesquisa"
+    (ngModelChange)="updateList()">
+  </ion-searchbar>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let c of categories | async">
+      <button ion-item (click)="open(c)">
+        <ion-icon name="{{c.icon}}"></ion-icon>
+        {{c.name}}
+      </button>
+      <ion-item-options>
+        <button ion-button color="danger" (click)="delete(c)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)="add()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

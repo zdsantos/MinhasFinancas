@@ -1,0 +1,12 @@
+.ios, .md {
+    page-transactions {
+
+        .list ion-item-sliding, .item {
+            background: transparent;
+        }
+
+        ion-fab ion-icon {
+            color: color($colors, light, null);
+        }
+    }
+}

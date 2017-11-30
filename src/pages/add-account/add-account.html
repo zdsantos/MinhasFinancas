@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Nova Conta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Nome</ion-label>
+      <ion-input [(ngModel)]="account.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Valor inicial</ion-label>
+      <ion-input type="number" [(ngModel)]="account.balance" [textMask]="{mask: masks.currency}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Tipo</ion-label>
+      <ion-select [(ngModel)]="account.type" [selectOptions]="selectOptions" interface="popover">
+        <ion-option [value]="{name: 'Selecione', icon: ''}" selected>Selecione</ion-option>
+        <ion-option *ngFor="let t of types" [value]="t">{{t.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full round (click)="save()" color="secondary">Salvar</button>
+
+</ion-content>

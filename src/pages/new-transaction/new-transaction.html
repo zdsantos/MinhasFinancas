@@ -1,0 +1,50 @@
+<ion-header>
+  
+  <ion-navbar [ngClass]="transaction.type">
+    <ion-title>Nova Conta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Descrição</ion-label>
+      <ion-input [(ngModel)]="transaction.describe"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Data</ion-label>
+      <ion-datetime displayFormat="DD MMM YY, HH:mm"  [(ngModel)]="selectedDateTime"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Valor</ion-label>
+      <ion-input type="number" [(ngModel)]="transaction.value" [textMask]="{mask: masks.currency}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Categoria</ion-label>
+      <ion-select [(ngModel)]="transaction.category" [selectOptions]="selectOptions" interface="popover">
+        <ion-option [value]="null" selected>Selecione</ion-option>
+        <ion-option *ngFor="let c of categories | async" [value]="c">{{c.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Conta</ion-label>
+      <ion-select [(ngModel)]="transaction.account" [selectOptions]="selectOptions" interface="popover">
+        <ion-option [value]="null" selected>Selecione</ion-option>
+        <ion-option *ngFor="let a of accounts | async" [value]="a.id">{{a.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button full round (click)="save()" color="secondary">Salvar</button>
+  </ion-toolbar>
+</ion-footer>

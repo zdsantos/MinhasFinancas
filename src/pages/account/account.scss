@@ -1,0 +1,19 @@
+.ios, .md {
+    page-account {  
+        .list ion-item-sliding, .item {
+            background: transparent;
+        }
+        
+        .green {
+            color: color($colors, green, null);
+        }
+    
+        .red {
+            color: color($colors, red, null);
+        }
+    
+        ion-fab ion-icon {
+            color: color($colors, light, null);
+        }
+    }
+}

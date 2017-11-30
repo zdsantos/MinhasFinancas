@@ -1,0 +1,26 @@
+<ion-content>
+  <p>Criar nova categoria</p>
+  
+  <ion-row>
+    <ion-col col-7>
+      <ion-input [(ngModel)]="name" placeholder="Descrição"></ion-input>
+    </ion-col>
+    <ion-col col-3>
+      <ion-select [(ngModel)]="icon" cancelText="Cancelar">
+        <ion-option value="icone">Icone</ion-option>
+        <ion-option *ngFor="let i of icons" value="{{i.icon}}">
+          <ion-icon name="{{i.icon}}">{{i.name}}</ion-icon>
+        </ion-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  
+  <ion-row>
+    <ion-col text-center>
+      <button ion-button clear small navPop>Cancelar</button>
+    </ion-col>
+    <ion-col text-center>
+      <button (click)="save()" ion-button clear small>Salvar</button>
+    </ion-col>
+  </ion-row>
+</ion-content>

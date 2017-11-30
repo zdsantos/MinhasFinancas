@@ -1,0 +1,4 @@
+<div class="container" [ngClass]="transaction.type">
+  <p>{{transaction.describe}}</p>
+  <p>{{transaction.value | currency:"BRL":true:'.2'}}</p>
+</div>

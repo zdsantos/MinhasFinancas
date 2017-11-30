@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Transações
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <loading-spinner *ngIf="loading"></loading-spinner>
+  <ion-list>
+    <ion-item *ngFor="let t of transactions | async">
+      <transaction-item [transaction]="t"></transaction-item>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab color="secondary">
+        <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="add('income')" color="green">
+        <ion-icon name="arrow-dropup-circle"></ion-icon>
+      </button>
+      <button ion-fab (click)="add('expense')" color="red">
+        <ion-icon name="arrow-dropdown-circle"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

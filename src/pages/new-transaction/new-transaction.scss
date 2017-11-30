@@ -1,0 +1,24 @@
+.ios, .md {
+    page-new-transaction {
+    
+        .income {
+            .toolbar-background {
+                background: color($colors, green, null);
+            }
+        }
+    
+        .expense {
+            .toolbar-background {
+                background: color($colors, red, null);
+            }
+        }
+    
+        .text-input {
+            text-align: right
+        }
+
+        .toolbar-background {
+            background: transparent;
+        }
+    }
+}

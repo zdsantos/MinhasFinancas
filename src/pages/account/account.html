@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Contas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  
+  <loading-spinner *ngIf="loading"></loading-spinner>
+  <ion-list>
+    <button ion-item (click)="open(acc)" *ngFor="let acc of accounts | async">
+      <ion-icon name="{{acc.type.icon}}" item-left></ion-icon>
+      <h2>{{acc.name}}</h2>
+      <p>Saldo: <span [ngClass]="{'green': acc.balance >= 0, 'red': acc.balance < 0}">{{acc.balance | currency:"BRL":true:'.2'}}</span></p>
+    </button>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)="add()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

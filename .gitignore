@@ -1,0 +1,20 @@
+# Directories #
+node_modules/
+.sourcemaps/
+.vscode/
+plugins/
+www/
+platforms/
+
+# Logs #
+*.log
+
+# OS Files #
+.DS_Store
+.DS_Store?
+ehthumbs.db
+Thumbs.db
+
+# Other Files #
+.editorconfig
+
